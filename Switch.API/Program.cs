@@ -14,11 +14,17 @@ namespace Switch.API
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            BuildWebHost(args).Run();
+            //CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+        public static IWebHost BuildWebHost(string[] args) =>
+           WebHost.CreateDefaultBuilder(args)
+               .UseStartup<Startup>()
+               .Build();
+
+        //public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+        //  WebHost.CreateDefaultBuilder(args)
+        //    .UseStartup<Startup>();
     }
 }
